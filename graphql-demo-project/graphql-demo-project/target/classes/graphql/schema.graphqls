@@ -1,0 +1,31 @@
+type Mutation{
+updateCity(id: ID!, cityInput: CityInput): City
+createCity(city:CityInput):City
+}
+
+type Query{
+allCity:[City]
+getCity(id:Int):City
+getStateById(id: Int!): StateResponse
+}
+
+type City{
+    id:ID!
+    name:String
+    population:Int
+}
+
+input CityInput{
+   name:String
+   population:Int
+}
+type StateResponse {
+    name: String
+    country: String
+    cityResponse: CityResponse
+}
+
+type CityResponse {
+    name: String
+    population: Int
+}
